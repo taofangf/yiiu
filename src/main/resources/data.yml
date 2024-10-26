@@ -162,7 +162,7 @@ _permissions:
         description: 删除所有索引
         url: /admin/indexed/deleteAll
   - name: node
-    description: 节点
+    description: 板块
     url:
     childs:
       - name: node:list

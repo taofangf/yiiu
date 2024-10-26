@@ -15,7 +15,7 @@
                             <div class="input-group">
               <span class="input-group-btn">
                 <a id="choiceNode" class="btn btn-default" onclick="javascript:;" data-toggle="modal"
-                   data-target="#choiceModal">${nodeName!"选择节点"}</a>
+                   data-target="#choiceModal">${nodeName!"选择板块"}</a>
               </span>
                                 <input type="text" class="form-control" id="title" name="title" value="${title!}"
                                        placeholder="标题">
@@ -49,7 +49,7 @@
                 <div class="modal-header">
                     <button id="closeChoiceModalBtn" type="button" class="close" data-dismiss="modal"
                             aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">选择节点 <small> 没有找到相应的节点，那就选None吧，管理员看到了会处理的
+                    <h4 class="modal-title" id="myModalLabel">选择板块 <small> 没有找到相应的板块，那就选None吧，管理员看到了会处理的
                             :-)</small></h4>
                 </div>
                 <div class="modal-body">
@@ -85,7 +85,7 @@
                 var title = $("#title").val();
                 var nodeId = $("#nodeId").val();
                 if (nodeId.length === 0) {
-                    error.html("请选择节点");
+                    error.html("请选择板块");
                     return false;
                 }
                 if (title.length === 0) {
