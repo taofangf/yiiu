@@ -381,7 +381,6 @@ blockquote > :last-child {
 }
 
 img {
-    max-width: 100%;
     box-sizing: content-box;
     background-color: #fff
 }
@@ -668,7 +667,8 @@ pre {
 
 .wrapper {
     width: 100%;
-    background-color: #e5e5e5
+    background-color: #e5e5e5;
+    min-height: calc(100vh - 92px);
 }
 
 .title a:visited {
