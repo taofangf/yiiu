@@ -5,41 +5,44 @@ package co.yiiu.config;
  */
 public class CookieConfig {
 
-  private String domain;
-  private int attendanceMaxAge;
-  // attendance name
-  private String attendanceName;
-  private int rememberMeExpireDay;
+    private String domain;
 
-  public int getRememberMeExpireDay() {
-    return rememberMeExpireDay;
-  }
+    private int attendanceMaxAge;
 
-  public void setRememberMeExpireDay(int rememberMeExpireDay) {
-    this.rememberMeExpireDay = rememberMeExpireDay;
-  }
+    // attendance name
+    private String attendanceName;
 
-  public String getDomain() {
-    return domain;
-  }
+    private int rememberMeExpireDay;
 
-  public void setDomain(String domain) {
-    this.domain = domain;
-  }
+    public int getRememberMeExpireDay() {
+        return rememberMeExpireDay;
+    }
 
-  public int getAttendanceMaxAge() {
-    return attendanceMaxAge;
-  }
+    public void setRememberMeExpireDay(int rememberMeExpireDay) {
+        this.rememberMeExpireDay = rememberMeExpireDay;
+    }
 
-  public void setAttendanceMaxAge(int attendanceMaxAge) {
-    this.attendanceMaxAge = attendanceMaxAge;
-  }
+    public String getDomain() {
+        return domain;
+    }
 
-  public String getAttendanceName() {
-    return attendanceName;
-  }
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
 
-  public void setAttendanceName(String attendanceName) {
-    this.attendanceName = attendanceName;
-  }
+    public int getAttendanceMaxAge() {
+        return attendanceMaxAge;
+    }
+
+    public void setAttendanceMaxAge(int attendanceMaxAge) {
+        this.attendanceMaxAge = attendanceMaxAge;
+    }
+
+    public String getAttendanceName() {
+        return attendanceName;
+    }
+
+    public void setAttendanceName(String attendanceName) {
+        this.attendanceName = attendanceName;
+    }
 }

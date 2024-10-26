@@ -5,7 +5,7 @@ package co.yiiu.module.code.model;
  */
 public enum CodeEnum {
 
-  EMAIL,
-  SMS
+    EMAIL,
+    SMS
 
 }

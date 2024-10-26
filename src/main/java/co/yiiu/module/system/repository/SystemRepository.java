@@ -12,5 +12,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SystemRepository extends JpaRepository<System, Integer> {
 
-  System findByName(String name);
+    System findByName(String name);
 }

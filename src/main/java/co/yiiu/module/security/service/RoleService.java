@@ -21,48 +21,48 @@ import java.util.List;
 @CacheConfig(cacheNames = "roles")
 public class RoleService {
 
-  @Autowired
-  private RoleRepository roleRepository;
+    @Autowired
+    private RoleRepository roleRepository;
 
-  public Role findByName(String name) {
-    return roleRepository.findByName(name);
-  }
+    public Role findByName(String name) {
+        return roleRepository.findByName(name);
+    }
 
-  /**
-   * 查询所有的角色
-   *
-   * @return
-   */
-  @Cacheable
-  public List<Role> findAll() {
-    return roleRepository.findAll();
-  }
+    /**
+     * 查询所有的角色
+     *
+     * @return
+     */
+    @Cacheable
+    public List<Role> findAll() {
+        return roleRepository.findAll();
+    }
 
-  /**
-   * 删除角色
-   *
-   * @param id
-   */
-  @CacheEvict(allEntries = true)
-  public void deleteById(Integer id) {
-    Role role = findById(id);
-    roleRepository.delete(role);
-  }
+    /**
+     * 删除角色
+     *
+     * @param id
+     */
+    @CacheEvict(allEntries = true)
+    public void deleteById(Integer id) {
+        Role role = findById(id);
+        roleRepository.delete(role);
+    }
 
-  /**
-   * 根据id查找角色
-   *
-   * @param id
-   * @return
-   */
-  @Cacheable
-  public Role findById(int id) {
-    return roleRepository.findById(id);
-  }
+    /**
+     * 根据id查找角色
+     *
+     * @param id
+     * @return
+     */
+    @Cacheable
+    public Role findById(int id) {
+        return roleRepository.findById(id);
+    }
 
-  @CacheEvict(allEntries = true)
-  public void save(Role role) {
-    roleRepository.save(role);
-  }
+    @CacheEvict(allEntries = true)
+    public void save(Role role) {
+        roleRepository.save(role);
+    }
 
 }

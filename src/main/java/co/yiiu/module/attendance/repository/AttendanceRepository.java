@@ -11,6 +11,6 @@ import java.util.Date;
  */
 public interface AttendanceRepository extends JpaRepository<Attendance, Integer> {
 
-  Attendance findByUserAndInTimeBetween(User user, Date date1, Date date2);
+    Attendance findByUserAndInTimeBetween(User user, Date date1, Date date2);
 
 }

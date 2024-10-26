@@ -1,10 +1,9 @@
 package co.yiiu.module.node.repository;
 
+import java.util.List;
 import co.yiiu.module.node.model.Node;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 /**
  * Created by tomoya.
@@ -14,13 +13,13 @@ import java.util.List;
 @Repository
 public interface NodeRepository extends JpaRepository<Node, Integer> {
 
-  List<Node> findAll();
+    List<Node> findAll();
 
-  List<Node> findByPid(Integer pid);
+    List<Node> findByPid(Integer pid);
 
-  List<Node> findByPidNot(Integer pid);
+    List<Node> findByPidNot(Integer pid);
 
-  Node findByValue(String value);
+    Node findByValue(String value);
 
-  void deleteByPid(Integer pid);
+    void deleteByPid(Integer pid);
 }

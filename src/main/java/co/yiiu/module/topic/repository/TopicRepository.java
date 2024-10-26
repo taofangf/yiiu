@@ -18,25 +18,25 @@ import java.util.Date;
 @Repository
 public interface TopicRepository extends JpaRepository<Topic, Integer> {
 
-  Topic findById(int id);
+    Topic findById(int id);
 
-  Page<Topic> findByUser(User user, Pageable pageable);
+    Page<Topic> findByUser(User user, Pageable pageable);
 
-  void deleteByUser(User user);
+    void deleteByUser(User user);
 
-  Page<Topic> findByGood(boolean b, Pageable pageable);
+    Page<Topic> findByGood(boolean b, Pageable pageable);
 
-  Page<Topic> findByReplyCount(int i, Pageable pageable);
+    Page<Topic> findByReplyCount(int i, Pageable pageable);
 
-  Page<Topic> findByTitleContainingOrContentContaining(String title, String content, Pageable pageable);
+    Page<Topic> findByTitleContainingOrContentContaining(String title, String content, Pageable pageable);
 
-  int countByInTimeBetween(Date date1, Date date2);
+    int countByInTimeBetween(Date date1, Date date2);
 
-  Topic findByTitle(String title);
+    Topic findByTitle(String title);
 
-  void delete(Topic topic);
+    void delete(Topic topic);
 
-  Page<Topic> findByNode(Node node, Pageable pageable);
+    Page<Topic> findByNode(Node node, Pageable pageable);
 
-  long countByNode(Node node);
+    long countByNode(Node node);
 }

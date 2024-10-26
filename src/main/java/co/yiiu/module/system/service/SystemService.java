@@ -15,14 +15,14 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class SystemService {
 
-  @Autowired
-  private SystemRepository systemRepository;
+    @Autowired
+    private SystemRepository systemRepository;
 
-  public System findByName(String name) {
-    return systemRepository.findByName(name);
-  }
+    public System findByName(String name) {
+        return systemRepository.findByName(name);
+    }
 
-  public System save(System system) {
-    return systemRepository.save(system);
-  }
+    public System save(System system) {
+        return systemRepository.save(system);
+    }
 }

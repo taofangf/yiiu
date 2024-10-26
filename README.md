@@ -1,5 +1,5 @@
 > 本项目是从 [pybbs](https://github.com/tomoya92/pybbs) fork 过来的
-> 
+>
 > 使用说明：请保留页面底部的 *powered by yiiu.co* 感谢支持
 
 在线地址: [yiiu.co](https://yiiu.co)
@@ -30,7 +30,7 @@
 - 使用 `Hibernate-Search` 做数据检索，支持中文分词和结果关键字高亮
 - 自己实现了一个Markdown编辑器, 附带菜单，书写方便, 还支持拖拽图片上传
 
-待完成的功能 *如果有你折腾过的，欢迎提pr，先谢过了:-)* 
+待完成的功能 *如果有你折腾过的，欢迎提pr，先谢过了:-)*
 
 - [ ] 权限修改后实现热更新，不用重新登录就可以生效
 - [ ] 第三方登录成功后记住我
@@ -63,6 +63,7 @@ windows上启动脚本参见 [传送门](https://github.com/yiiu-co/yiiu/wiki/wi
 
 - 创建数据库时选择 `utf8mb4` 字符集
 - 添加下面这段配置到 `/etc/mysql/mysql.conf.d/mysqld.conf` 里的 `[mysqld]` 下，保存重启Mysql服务
+
 ```
 [mysqld]
 character-set-client-handshake = FALSE
@@ -70,6 +71,7 @@ character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
 init_connect='SET NAMES utf8mb4'
 ```
+
 - 如果不行，试着把yiiu也重启一下
 
 ## 切回MySQL方法
@@ -97,7 +99,8 @@ init_connect='SET NAMES utf8mb4'
 
 ## 关于主题
 
-本项目配置的结构目录非常方便主题开发，如果你想适配一套自己喜欢的主题，可以按照 `views` 目录下的文件夹结构开发，然后修改一下配置文件里的 `site.theme` 的值即可打包部署了
+本项目配置的结构目录非常方便主题开发，如果你想适配一套自己喜欢的主题，可以按照 `views`
+目录下的文件夹结构开发，然后修改一下配置文件里的 `site.theme` 的值即可打包部署了
 
 后续我也会适配一些好看的主题放到组织 `yiiu-co` 里
 
@@ -135,7 +138,7 @@ QQ群：`419343003`
 
 ## 贡献
 
-欢迎大家提 issues 及 pr 
+欢迎大家提 issues 及 pr
 
 感谢以下朋友的pr
 

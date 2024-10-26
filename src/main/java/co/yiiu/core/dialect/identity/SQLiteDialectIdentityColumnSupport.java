@@ -4,14 +4,14 @@ import org.hibernate.dialect.Dialect;
 import org.hibernate.dialect.identity.IdentityColumnSupportImpl;
 
 public class SQLiteDialectIdentityColumnSupport extends IdentityColumnSupportImpl {
-  public SQLiteDialectIdentityColumnSupport(Dialect dialect) {
-    super(dialect);
-  }
+    public SQLiteDialectIdentityColumnSupport(Dialect dialect) {
+        super(dialect);
+    }
 
-  @Override
-  public boolean supportsIdentityColumns() {
-    return true;
-  }
+    @Override
+    public boolean supportsIdentityColumns() {
+        return true;
+    }
 
   /*
 	public boolean supportsInsertSelectIdentity() {
@@ -19,12 +19,12 @@ public class SQLiteDialectIdentityColumnSupport extends IdentityColumnSupportImp
   }
   */
 
-  @Override
-  public boolean hasDataTypeInIdentityColumn() {
-    // As specified in NHibernate dialect
-    // FIXME true
-    return false;
-  }
+    @Override
+    public boolean hasDataTypeInIdentityColumn() {
+        // As specified in NHibernate dialect
+        // FIXME true
+        return false;
+    }
 
   /*
 	public String appendIdentitySelectToInsert(String insertString) {
@@ -35,15 +35,15 @@ public class SQLiteDialectIdentityColumnSupport extends IdentityColumnSupportImp
   }
   */
 
-  @Override
-  public String getIdentitySelectString(String table, String column, int type) {
-    return "select last_insert_rowid()";
-  }
+    @Override
+    public String getIdentitySelectString(String table, String column, int type) {
+        return "select last_insert_rowid()";
+    }
 
-  @Override
-  public String getIdentityColumnString(int type) {
-    // return "integer primary key autoincrement";
-    // FIXME "autoincrement"
-    return "integer";
-  }
+    @Override
+    public String getIdentityColumnString(int type) {
+        // return "integer primary key autoincrement";
+        // FIXME "autoincrement"
+        return "integer";
+    }
 }

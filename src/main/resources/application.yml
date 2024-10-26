@@ -6,22 +6,22 @@ spring:
     index: 1
   resources:
     static-locations:
-    - classpath:/${site.theme}/static/
-    - file:./views/${site.theme}/static/
+      - classpath:/${site.theme}/static/
+      - file:./views/${site.theme}/static/
   freemarker:
     template-loader-path:
-    - classpath:/${site.theme}/templates/
-    - file:./views/${site.theme}/templates/
+      - classpath:/${site.theme}/templates/
+      - file:./views/${site.theme}/templates/
     cache: false
   datasource:
     driver-class-name: org.sqlite.JDBC
     url: jdbc:sqlite:./yiiu.sqlite
-#  datasource:
-#    url: jdbc:mysql://localhost/yiiu?useSSL=false&characterEncoding=utf8
-#    username: root
-#    password: 123123
+  #  datasource:
+  #    url: jdbc:mysql://localhost/yiiu?useSSL=false&characterEncoding=utf8
+  #    username: root
+  #    password: 123123
   jpa:
-#    database: mysql
+    #    database: mysql
     database-platform: co.yiiu.core.dialect.SQLiteDialect
     show-sql: true
     hibernate:
@@ -76,7 +76,7 @@ site:
   attemptsWaitTime: 15
   maxCreateTopic: 10
   createTopicScore: -10  # 创建主题变化的积分
-  createReplyScore : -5  # 创建回复变化的积分
+  createReplyScore: -5  # 创建回复变化的积分
   userUploadSpaceSize: 50 # 单位MB
   score: 2000 # 用户注册后初始积分
   loginPoints: 2 # 登录点，最多2个位置登录，第三个登录点会覆盖第一个
@@ -94,9 +94,9 @@ site:
   mail:
     subject: 注册验证码 - ${site.name}
     content: |
-          <p>您好</p>
-          <p>&nbsp;&nbsp;您的验证码为 <span style='color: red;'>${genCode}</span> , 请在10分钟内使用！</p><br>
-          <small>本邮件为系统发出，请不要回复</small>
+      <p>您好</p>
+      <p>&nbsp;&nbsp;您的验证码为 <span style='color: red;'>${genCode}</span> , 请在10分钟内使用！</p><br>
+      <small>本邮件为系统发出，请不要回复</small>
 
 score:
   template:

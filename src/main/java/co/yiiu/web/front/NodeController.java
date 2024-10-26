@@ -16,15 +16,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class NodeController extends BaseController {
 
-  @Autowired
-  private NodeService nodeService;
+    @Autowired
+    private NodeService nodeService;
 
-  @GetMapping("/go/{value}")
-  public String topics(@PathVariable String value, Integer p, Model model) {
-    model.addAttribute("p", p);
-    model.addAttribute("value", value);
-    model.addAttribute("node", nodeService.findByValue(value));
-    return "front/node/list";
-  }
+    @GetMapping("/go/{value}")
+    public String topics(@PathVariable String value, Integer p, Model model) {
+        model.addAttribute("p", p);
+        model.addAttribute("value", value);
+        model.addAttribute("node", nodeService.findByValue(value));
+        return "front/node/list";
+    }
 
 }

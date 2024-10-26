@@ -12,221 +12,243 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "site")
 public class SiteConfig {
 
-  private String name;
-  private String intro;
-  private String baseUrl;
-  private String staticUrl;
-  private int pageSize;
-  private String uploadPath;
-  private String theme;
-  private boolean search;
-  private int attempts;
-  private long attemptsWaitTime;
-  private int maxCreateTopic;
-  private int createTopicScore;
-  private int createReplyScore;
-  private long userUploadSpaceSize;
-  private int score;
-  private int loginPoints;
-  private String GA;
-  private String googleZZ;
-  private String baiduTJ;
-  private String baiduZZ;
-  private boolean ssl;
-  private String newUserRole;
-  private CookieConfig cookie;
+    private String name;
 
-  private MailTemplateConfig mail;
+    private String intro;
 
-  public boolean isSsl() {
-    return ssl;
-  }
+    private String baseUrl;
 
-  public void setSsl(boolean ssl) {
-    this.ssl = ssl;
-  }
+    private String staticUrl;
 
-  public int getLoginPoints() {
-    return loginPoints;
-  }
+    private int pageSize;
 
-  public void setLoginPoints(int loginPoints) {
-    this.loginPoints = loginPoints;
-  }
+    private String uploadPath;
 
-  public String getGoogleZZ() {
-    return googleZZ;
-  }
+    private String theme;
 
-  public void setGoogleZZ(String googleZZ) {
-    this.googleZZ = googleZZ;
-  }
+    private boolean search;
 
-  public String getBaiduTJ() {
-    return baiduTJ;
-  }
+    private int attempts;
 
-  public void setBaiduTJ(String baiduTJ) {
-    this.baiduTJ = baiduTJ;
-  }
+    private long attemptsWaitTime;
 
-  public String getBaiduZZ() {
-    return baiduZZ;
-  }
+    private int maxCreateTopic;
 
-  public void setBaiduZZ(String baiduZZ) {
-    this.baiduZZ = baiduZZ;
-  }
+    private int createTopicScore;
 
-  public String getGA() {
-    return GA;
-  }
+    private int createReplyScore;
 
-  public void setGA(String GA) {
-    this.GA = GA;
-  }
+    private long userUploadSpaceSize;
 
-  public String getName() {
-    return name;
-  }
+    private int score;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    private int loginPoints;
 
-  public String getIntro() {
-    return intro;
-  }
+    private String GA;
 
-  public void setIntro(String intro) {
-    this.intro = intro;
-  }
+    private String googleZZ;
 
-  public String getBaseUrl() {
-    return baseUrl;
-  }
+    private String baiduTJ;
 
-  public void setBaseUrl(String baseUrl) {
-    this.baseUrl = baseUrl;
-  }
+    private String baiduZZ;
 
-  public String getStaticUrl() {
-    return staticUrl;
-  }
+    private boolean ssl;
 
-  public void setStaticUrl(String staticUrl) {
-    this.staticUrl = staticUrl;
-  }
+    private String newUserRole;
 
-  public int getPageSize() {
-    return pageSize;
-  }
+    private CookieConfig cookie;
 
-  public void setPageSize(int pageSize) {
-    this.pageSize = pageSize;
-  }
+    private MailTemplateConfig mail;
 
-  public String getUploadPath() {
-    return uploadPath;
-  }
+    public boolean isSsl() {
+        return ssl;
+    }
 
-  public void setUploadPath(String uploadPath) {
-    this.uploadPath = uploadPath;
-  }
+    public void setSsl(boolean ssl) {
+        this.ssl = ssl;
+    }
 
-  public String getTheme() {
-    return theme;
-  }
+    public int getLoginPoints() {
+        return loginPoints;
+    }
 
-  public void setTheme(String theme) {
-    this.theme = theme;
-  }
+    public void setLoginPoints(int loginPoints) {
+        this.loginPoints = loginPoints;
+    }
 
-  public boolean isSearch() {
-    return search;
-  }
+    public String getGoogleZZ() {
+        return googleZZ;
+    }
 
-  public void setSearch(boolean search) {
-    this.search = search;
-  }
+    public void setGoogleZZ(String googleZZ) {
+        this.googleZZ = googleZZ;
+    }
 
-  public int getAttempts() {
-    return attempts;
-  }
+    public String getBaiduTJ() {
+        return baiduTJ;
+    }
 
-  public void setAttempts(int attempts) {
-    this.attempts = attempts;
-  }
+    public void setBaiduTJ(String baiduTJ) {
+        this.baiduTJ = baiduTJ;
+    }
 
-  public long getAttemptsWaitTime() {
-    return attemptsWaitTime;
-  }
+    public String getBaiduZZ() {
+        return baiduZZ;
+    }
 
-  public void setAttemptsWaitTime(long attemptsWaitTime) {
-    this.attemptsWaitTime = attemptsWaitTime;
-  }
+    public void setBaiduZZ(String baiduZZ) {
+        this.baiduZZ = baiduZZ;
+    }
 
-  public int getMaxCreateTopic() {
-    return maxCreateTopic;
-  }
+    public String getGA() {
+        return GA;
+    }
 
-  public void setMaxCreateTopic(int maxCreateTopic) {
-    this.maxCreateTopic = maxCreateTopic;
-  }
+    public void setGA(String GA) {
+        this.GA = GA;
+    }
 
-  public long getUserUploadSpaceSize() {
-    return userUploadSpaceSize;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setUserUploadSpaceSize(long userUploadSpaceSize) {
-    this.userUploadSpaceSize = userUploadSpaceSize;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public int getScore() {
-    return score;
-  }
+    public String getIntro() {
+        return intro;
+    }
 
-  public void setScore(int score) {
-    this.score = score;
-  }
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
 
-  public String getNewUserRole() {
-    return newUserRole;
-  }
+    public String getBaseUrl() {
+        return baseUrl;
+    }
 
-  public void setNewUserRole(String newUserRole) {
-    this.newUserRole = newUserRole;
-  }
+    public void setBaseUrl(String baseUrl) {
+        this.baseUrl = baseUrl;
+    }
 
-  public CookieConfig getCookie() {
-    return cookie;
-  }
+    public String getStaticUrl() {
+        return staticUrl;
+    }
 
-  public void setCookie(CookieConfig cookie) {
-    this.cookie = cookie;
-  }
+    public void setStaticUrl(String staticUrl) {
+        this.staticUrl = staticUrl;
+    }
 
-  public int getCreateTopicScore() {
-    return createTopicScore;
-  }
+    public int getPageSize() {
+        return pageSize;
+    }
 
-  public void setCreateTopicScore(int createTopicScore) {
-    this.createTopicScore = createTopicScore;
-  }
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
 
-  public int getCreateReplyScore() {
-    return createReplyScore;
-  }
+    public String getUploadPath() {
+        return uploadPath;
+    }
 
-  public void setCreateReplyScore(int createReplyScore) {
-    this.createReplyScore = createReplyScore;
-  }
+    public void setUploadPath(String uploadPath) {
+        this.uploadPath = uploadPath;
+    }
 
-  public MailTemplateConfig getMail() {
-    return mail;
-  }
+    public String getTheme() {
+        return theme;
+    }
 
-  public void setMail(MailTemplateConfig mail) {
-    this.mail = mail;
-  }
+    public void setTheme(String theme) {
+        this.theme = theme;
+    }
+
+    public boolean isSearch() {
+        return search;
+    }
+
+    public void setSearch(boolean search) {
+        this.search = search;
+    }
+
+    public int getAttempts() {
+        return attempts;
+    }
+
+    public void setAttempts(int attempts) {
+        this.attempts = attempts;
+    }
+
+    public long getAttemptsWaitTime() {
+        return attemptsWaitTime;
+    }
+
+    public void setAttemptsWaitTime(long attemptsWaitTime) {
+        this.attemptsWaitTime = attemptsWaitTime;
+    }
+
+    public int getMaxCreateTopic() {
+        return maxCreateTopic;
+    }
+
+    public void setMaxCreateTopic(int maxCreateTopic) {
+        this.maxCreateTopic = maxCreateTopic;
+    }
+
+    public long getUserUploadSpaceSize() {
+        return userUploadSpaceSize;
+    }
+
+    public void setUserUploadSpaceSize(long userUploadSpaceSize) {
+        this.userUploadSpaceSize = userUploadSpaceSize;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public String getNewUserRole() {
+        return newUserRole;
+    }
+
+    public void setNewUserRole(String newUserRole) {
+        this.newUserRole = newUserRole;
+    }
+
+    public CookieConfig getCookie() {
+        return cookie;
+    }
+
+    public void setCookie(CookieConfig cookie) {
+        this.cookie = cookie;
+    }
+
+    public int getCreateTopicScore() {
+        return createTopicScore;
+    }
+
+    public void setCreateTopicScore(int createTopicScore) {
+        this.createTopicScore = createTopicScore;
+    }
+
+    public int getCreateReplyScore() {
+        return createReplyScore;
+    }
+
+    public void setCreateReplyScore(int createReplyScore) {
+        this.createReplyScore = createReplyScore;
+    }
+
+    public MailTemplateConfig getMail() {
+        return mail;
+    }
+
+    public void setMail(MailTemplateConfig mail) {
+        this.mail = mail;
+    }
 }

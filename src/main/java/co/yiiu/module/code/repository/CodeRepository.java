@@ -1,10 +1,9 @@
 package co.yiiu.module.code.repository;
 
+import java.util.List;
 import co.yiiu.module.code.model.Code;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 /**
  * Created by tomoya on 17-6-6.
@@ -12,6 +11,6 @@ import java.util.List;
 @Repository
 public interface CodeRepository extends JpaRepository<Code, Integer> {
 
-  List<Code> findByCodeAndType(String code, String type);
+    List<Code> findByCodeAndType(String code, String type);
 
 }

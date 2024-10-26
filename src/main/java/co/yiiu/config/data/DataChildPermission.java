@@ -7,31 +7,33 @@ package co.yiiu.config.data;
  */
 public class DataChildPermission {
 
-  private String name;
-  private String description;
-  private String url;
+    private String name;
 
-  public String getName() {
-    return name;
-  }
+    private String description;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    private String url;
 
-  public String getDescription() {
-    return description;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public String getUrl() {
-    return url;
-  }
+    public String getDescription() {
+        return description;
+    }
 
-  public void setUrl(String url) {
-    this.url = url;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }

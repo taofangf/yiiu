@@ -1,12 +1,11 @@
 package co.yiiu.core.util.freemarker;
 
-import com.google.common.collect.Maps;
-import freemarker.cache.TemplateLoader;
-
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.Map;
+import com.google.common.collect.Maps;
+import freemarker.cache.TemplateLoader;
 
 /**
  * Created by teddyzhu.
@@ -14,6 +13,7 @@ import java.util.Map;
  */
 public class StringTemplateLoader implements TemplateLoader {
     private static final String DEFAULT_TEMPLATE_KEY = "_default_template_key";
+
     private Map templates = Maps.newConcurrentMap();
 
     public StringTemplateLoader(String defaultTemplate) {
@@ -23,8 +23,7 @@ public class StringTemplateLoader implements TemplateLoader {
     }
 
     @Override
-    public void closeTemplateSource(Object templateSource)
-            throws IOException {
+    public void closeTemplateSource(Object templateSource) throws IOException {
 
     }
 
@@ -42,8 +41,7 @@ public class StringTemplateLoader implements TemplateLoader {
     }
 
     @Override
-    public Reader getReader(Object templateSource, String encoding)
-            throws IOException {
+    public Reader getReader(Object templateSource, String encoding) throws IOException {
         return new StringReader((String) templateSource);
     }
 }

@@ -15,21 +15,21 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
-  @Autowired
-  private CommonInterceptor commonInterceptor;
+    @Autowired
+    private CommonInterceptor commonInterceptor;
 
-  @Override
-  public void configurePathMatch(PathMatchConfigurer configurer) {
-    configurer.setUseSuffixPatternMatch(false);
-  }
+    @Override
+    public void configurePathMatch(PathMatchConfigurer configurer) {
+        configurer.setUseSuffixPatternMatch(false);
+    }
 
-  /**
-   * Add intercepter
-   *
-   * @param registry
-   */
-  @Override
-  public void addInterceptors(InterceptorRegistry registry) {
-    registry.addInterceptor(commonInterceptor).addPathPatterns("/**");
-  }
+    /**
+     * Add intercepter
+     *
+     * @param registry
+     */
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(commonInterceptor).addPathPatterns("/**");
+    }
 }

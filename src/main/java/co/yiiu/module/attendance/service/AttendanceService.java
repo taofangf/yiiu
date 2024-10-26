@@ -16,27 +16,27 @@ import java.util.Date;
 @Transactional
 public class AttendanceService {
 
-  @Autowired
-  private AttendanceRepository attendanceRepository;
+    @Autowired
+    private AttendanceRepository attendanceRepository;
 
-  /**
-   * search between date1 and date2 record
-   *
-   * @param user
-   * @param date1
-   * @param date2
-   * @return
-   */
-  public Attendance findByUserAndInTime(User user, Date date1, Date date2) {
-    return attendanceRepository.findByUserAndInTimeBetween(user, date1, date2);
-  }
+    /**
+     * search between date1 and date2 record
+     *
+     * @param user
+     * @param date1
+     * @param date2
+     * @return
+     */
+    public Attendance findByUserAndInTime(User user, Date date1, Date date2) {
+        return attendanceRepository.findByUserAndInTimeBetween(user, date1, date2);
+    }
 
-  /**
-   * save attendance
-   *
-   * @param attendance
-   */
-  public void save(Attendance attendance) {
-    attendanceRepository.save(attendance);
-  }
+    /**
+     * save attendance
+     *
+     * @param attendance
+     */
+    public void save(Attendance attendance) {
+        attendanceRepository.save(attendance);
+    }
 }

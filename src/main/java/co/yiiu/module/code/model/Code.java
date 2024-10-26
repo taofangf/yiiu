@@ -1,8 +1,13 @@
 package co.yiiu.module.code.model;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by tomoya on 17-6-6.
@@ -11,68 +16,68 @@ import java.util.Date;
 @Table(name = "yiiu_code")
 public class Code implements Serializable {
 
-  @Id
-  @GeneratedValue
-  private int id;
+    @Id
+    @GeneratedValue
+    private int id;
 
-  @Column(unique = true)
-  private String code;
+    @Column(unique = true)
+    private String code;
 
-  @Column(name = "expire_time")
-  private Date expireTime;
+    @Column(name = "expire_time")
+    private Date expireTime;
 
-  private String type;
+    private String type;
 
-  @Column(name = "is_used")
-  private boolean isUsed;
+    @Column(name = "is_used")
+    private boolean isUsed;
 
-  private String email;
+    private String email;
 
-  public int getId() {
-    return id;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public String getCode() {
-    return code;
-  }
+    public String getCode() {
+        return code;
+    }
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-  public Date getExpireTime() {
-    return expireTime;
-  }
+    public Date getExpireTime() {
+        return expireTime;
+    }
 
-  public void setExpireTime(Date expireTime) {
-    this.expireTime = expireTime;
-  }
+    public void setExpireTime(Date expireTime) {
+        this.expireTime = expireTime;
+    }
 
-  public String getType() {
-    return type;
-  }
+    public String getType() {
+        return type;
+    }
 
-  public void setType(String type) {
-    this.type = type;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  public boolean isUsed() {
-    return isUsed;
-  }
+    public boolean isUsed() {
+        return isUsed;
+    }
 
-  public void setUsed(boolean used) {
-    isUsed = used;
-  }
+    public void setUsed(boolean used) {
+        isUsed = used;
+    }
 
-  public String getEmail() {
-    return email;
-  }
+    public String getEmail() {
+        return email;
+    }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

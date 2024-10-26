@@ -1,5 +1,6 @@
 package co.yiiu.module.reply.repository;
 
+import java.util.List;
 import co.yiiu.module.reply.model.Reply;
 import co.yiiu.module.topic.model.Topic;
 import co.yiiu.module.user.model.User;
@@ -7,8 +8,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 /**
  * Created by tomoya.
@@ -18,11 +17,11 @@ import java.util.List;
 @Repository
 public interface ReplyRepository extends JpaRepository<Reply, Integer> {
 
-  List<Reply> findByTopicOrderByUpDownDescDownAscInTimeAsc(Topic topic);
+    List<Reply> findByTopicOrderByUpDownDescDownAscInTimeAsc(Topic topic);
 
-  void deleteByTopic(Topic topic);
+    void deleteByTopic(Topic topic);
 
-  void deleteByUser(User user);
+    void deleteByUser(User user);
 
-  Page<Reply> findByUser(User user, Pageable pageable);
+    Page<Reply> findByUser(User user, Pageable pageable);
 }

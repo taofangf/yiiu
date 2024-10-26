@@ -20,21 +20,21 @@ import java.util.List;
 @Repository
 public interface NotificationRepository extends JpaRepository<Notification, Integer> {
 
-  Page<Notification> findByTargetUser(User targetUser, Pageable pageable);
+    Page<Notification> findByTargetUser(User targetUser, Pageable pageable);
 
-  Page<Notification> findByTargetUserAndIsRead(User targetUser, boolean isRead, Pageable pageable);
+    Page<Notification> findByTargetUserAndIsRead(User targetUser, boolean isRead, Pageable pageable);
 
-  List<Notification> findByTargetUserAndIsRead(User targetUser, boolean isRead);
+    List<Notification> findByTargetUserAndIsRead(User targetUser, boolean isRead);
 
-  long countByTargetUserAndIsRead(User targetUser, boolean isRead);
+    long countByTargetUserAndIsRead(User targetUser, boolean isRead);
 
-  @Modifying
-  @Query("update Notification n set n.isRead = true where n.targetUser = ?1")
-  void updateByIsRead(User targetUser);
+    @Modifying
+    @Query("update Notification n set n.isRead = true where n.targetUser = ?1")
+    void updateByIsRead(User targetUser);
 
-  void deleteByTargetUser(User user);
+    void deleteByTargetUser(User user);
 
-  void deleteByUser(User user);
+    void deleteByUser(User user);
 
-  void deleteByTopic(Topic topic);
+    void deleteByTopic(Topic topic);
 }

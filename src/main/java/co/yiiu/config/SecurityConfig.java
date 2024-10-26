@@ -30,81 +30,65 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-  @Autowired
-  private YiiuUserDetailService yiiuUserDetailService;
-  @Autowired
-  private YiiuFilterSecurityInterceptor yiiuFilterSecurityInterceptor;
-  @Autowired
-  private BeanConfig beanConfig;
-  @Autowired
-  private ValidateCodeAuthenticationFilter validateCodeAuthenticationFilter;
+    @Autowired
+    private YiiuUserDetailService yiiuUserDetailService;
 
-  @Override
-  protected void configure(HttpSecurity http) throws Exception {
-    http.authorizeRequests()
-        .antMatchers("/static/**")
-        .permitAll()
-        .antMatchers(
-            "/upload",
-            "/attendance",
-            "/admin/**",
-            "/topic/create",
-            "/topic/*/delete",
-            "/topic/*/edit",
-            "/reply/save",
-            "/reply/*/delete",
-            "/reply/*/edit",
-            "/reply/*/up",
-            "/reply/*/cancelUp",
-            "/reply/*/down",
-            "/reply/*/cancelDown",
-            "/collect/**",
-            "/notification/**",
-            "/user/profile",
-            "/user/changeAvatar",
-            "/user/changePassword",
-            "/user/accessToken",
-            "/user/refreshToken",
-            "/user/space",
-            "/space/deleteFile"
-        )
-        .authenticated();
+    @Autowired
+    private YiiuFilterSecurityInterceptor yiiuFilterSecurityInterceptor;
 
-    http.formLogin()
-        .loginPage("/login")
-        .loginProcessingUrl("/login")
-        .failureUrl("/login?error")
-        .defaultSuccessUrl("/")
-        .permitAll();
+    @Autowired
+    private BeanConfig beanConfig;
 
-    http.rememberMe().key("remember-me").rememberMeServices(beanConfig.persistentTokenBasedRememberMeServices());
+    @Autowired
+    private ValidateCodeAuthenticationFilter validateCodeAuthenticationFilter;
 
-    http.logout()
-        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-        .logoutSuccessUrl("/")
-        .deleteCookies("JSESSIONID", "remember-me");
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/static/**")
+                .permitAll()
+                .antMatchers("/upload", "/attendance", "/admin/**", "/topic/create", "/topic/*/delete", "/topic/*/edit",
+                        "/reply/save", "/reply/*/delete", "/reply/*/edit", "/reply/*/up", "/reply/*/cancelUp",
+                        "/reply/*/down", "/reply/*/cancelDown", "/collect/**", "/notification/**", "/user/profile",
+                        "/user/changeAvatar", "/user/changePassword", "/user/accessToken", "/user/refreshToken",
+                        "/user/space", "/space/deleteFile")
+                .authenticated();
 
-    http.addFilterBefore(yiiuFilterSecurityInterceptor, FilterSecurityInterceptor.class);
-    http.addFilterBefore(validateCodeAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+        http.formLogin()
+                .loginPage("/login")
+                .loginProcessingUrl("/login")
+                .failureUrl("/login?error")
+                .defaultSuccessUrl("/")
+                .permitAll();
 
-    http.csrf().ignoringAntMatchers("/upload", "/user/space/deleteFile", "/github_login", "/favicon.ico");
+        http.rememberMe().key("remember-me").rememberMeServices(beanConfig.persistentTokenBasedRememberMeServices());
 
-  }
+        http.logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutSuccessUrl("/")
+                .deleteCookies("JSESSIONID", "remember-me");
 
-  @Override
-  public void configure(WebSecurity web) {
-    web.ignoring().antMatchers("/static/**");
-  }
+        http.addFilterBefore(yiiuFilterSecurityInterceptor, FilterSecurityInterceptor.class);
+        http.addFilterBefore(validateCodeAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth.userDetailsService(yiiuUserDetailService).passwordEncoder(new BCryptPasswordEncoder());
-  }
+        http.csrf().ignoringAntMatchers("/upload", "/user/space/deleteFile", "/github_login", "/favicon.ico");
 
-  @Override
-  @Bean
-  public AuthenticationManager authenticationManagerBean() throws Exception {
-    return super.authenticationManagerBean();
-  }
+    }
+
+    @Override
+    public void configure(WebSecurity web) {
+        web.ignoring().antMatchers("/static/**");
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(yiiuUserDetailService).passwordEncoder(new BCryptPasswordEncoder());
+    }
+
+    @Override
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
 
 }

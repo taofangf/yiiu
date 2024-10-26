@@ -16,15 +16,15 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CollectRepository extends JpaRepository<Collect, Integer> {
 
-  Page<Collect> findByUser(User user, Pageable pageable);
+    Page<Collect> findByUser(User user, Pageable pageable);
 
-  long countByUser(User user);
+    long countByUser(User user);
 
-  long countByTopic(Topic topic);
+    long countByTopic(Topic topic);
 
-  Collect findByUserAndTopic(User user, Topic topic);
+    Collect findByUserAndTopic(User user, Topic topic);
 
-  void deleteByUser(User user);
+    void deleteByUser(User user);
 
-  void deleteByTopic(Topic topic);
+    void deleteByTopic(Topic topic);
 }

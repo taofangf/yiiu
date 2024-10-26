@@ -8,8 +8,7 @@ _user:
   role: admin
 
 _roles:
-  -
-    name: admin
+  - name: admin
     description: 超级管理员
     permissions:
       - admin:index
@@ -41,8 +40,7 @@ _roles:
       - node:add
       - node:edit
       - node:delete
-  -
-    name: banzhu
+  - name: banzhu
     description: 版主
     permissions:
       - admin:index
@@ -55,165 +53,127 @@ _roles:
       - reply:edit
       - reply:delete
       - reply:list
-  -
-    name: user
+  - name: user
     description: 会员
     permissions:
 
 _permissions:
-  -
-    name: admin
+  - name: admin
     description: 仪表盘
     url:
     childs:
-      -
-        name: admin:index
+      - name: admin:index
         description: 后台管理
         url: /admin/index
-  -
-    name: topic
+  - name: topic
     description: 话题
     url:
     childs:
-      -
-        name: topic:edit
+      - name: topic:edit
         description: 话题编辑
         url: /admin/topic/*/edit
-      -
-        name: topic:delete
+      - name: topic:delete
         description: 话题删除
         url: /admin/topic/*/delete
-      -
-        name: topic:top
+      - name: topic:top
         description: 话题置顶
         url: /admin/topic/*/top
-      -
-        name: topic:good
+      - name: topic:good
         description: 话题加精
         url: /admin/topic/*/good
-      -
-        name: topic:list
+      - name: topic:list
         description: 话题列表
         url: /admin/topic/list
-      -
-        name: topic:lock
+      - name: topic:lock
         description: 话题锁定
         url: /admin/topic/*/lock
-  -
-    name: reply
+  - name: reply
     description: 回复
     url:
     childs:
-      -
-        name: reply:edit
+      - name: reply:edit
         description: 回复编辑
         url: /admin/reply/*/edit
-      -
-        name: reply:delete
+      - name: reply:delete
         description: 回复删除
         url: /admin/reply/*/delete
-      -
-        name: reply:list
+      - name: reply:list
         description: 回复列表
         url: /admin/reply/list
-  -
-    name: user
+  - name: user
     description: 用户
     url:
     childs:
-      -
-        name: user:list
+      - name: user:list
         description: 用户列表
         url: /admin/user/list
-      -
-        name: user:role
+      - name: user:role
         description: 用户角色
         url: /admin/user/*/role
-      -
-        name: user:delete
+      - name: user:delete
         description: 用户删除
         url: /admin/user/*/delete
-      -
-        name: user:block
+      - name: user:block
         description: 用户禁用
         url: /admin/user/*/block
-      -
-        name: user:unblock
+      - name: user:unblock
         description: 用户解禁
         url: /admin/user/*/unblock
-  -
-    name: permission
+  - name: permission
     description: 权限
     url:
     childs:
-      -
-        name: permission:list
+      - name: permission:list
         description: 权限列表
         url: /admin/permission/list
-      -
-        name: permission:add
+      - name: permission:add
         description: 权限添加
         url: /admin/permission/add
-      -
-        name: permission:edit
+      - name: permission:edit
         description: 权限编辑
         url: /admin/permission/*/edit
-      -
-        name: permission:delete
+      - name: permission:delete
         description: 权限删除
         url: /admin/permission/*/delete
-  -
-    name: role
+  - name: role
     description: 角色
     url:
     childs:
-      -
-        name: role:list
+      - name: role:list
         description: 角色列表
         url: /admin/role/list
-      -
-        name: role:add
+      - name: role:add
         description: 角色添加
         url: /admin/role/add
-      -
-        name: role:edit
+      - name: role:edit
         description: 角色编辑
         url: /admin/role/*/edit
-      -
-        name: role:delete
+      - name: role:delete
         description: 角色删除
         url: /admin/role/*/delete
-  -
-    name: index
+  - name: index
     description: 索引
     url:
     childs:
-      -
-        name: index:all
+      - name: index:all
         description: 索引全部话题
         url: /admin/indexed/indexAll
-      -
-        name: index:deleteAll
+      - name: index:deleteAll
         description: 删除所有索引
         url: /admin/indexed/deleteAll
-  -
-    name: node
+  - name: node
     description: 节点
     url:
     childs:
-      -
-        name: node:list
+      - name: node:list
         description: 版块列表
         url: /admin/node/list
-      -
-        name: node:add
+      - name: node:add
         description: 添加版块
         url: /admin/node/add
-      -
-        name: node:edit
+      - name: node:edit
         description: 编辑版块
         url: /admin/node/*/edit
-      -
-        name: node:delete
+      - name: node:delete
         description: 删除版块
         url: /admin/node/*/delete

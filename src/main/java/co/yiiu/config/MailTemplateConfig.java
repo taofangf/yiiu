@@ -7,6 +7,7 @@ package co.yiiu.config;
 public class MailTemplateConfig {
 
     private String subject;
+
     private String content;
 
     public String getSubject() {

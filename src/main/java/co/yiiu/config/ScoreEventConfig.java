@@ -1,11 +1,9 @@
 package co.yiiu.config;
 
+import java.util.Map;
 import com.google.common.collect.Maps;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by teddyzhu.
@@ -16,7 +14,6 @@ import java.util.Map;
 public class ScoreEventConfig {
 
     private Map<String, String> template = Maps.newConcurrentMap();
-
 
     public Map<String, String> getTemplate() {
         return template;

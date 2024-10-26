@@ -1,30 +1,37 @@
 package co.yiiu.web.front;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletResponse;
+
 import co.yiiu.config.SiteConfig;
 import co.yiiu.core.base.BaseController;
 import co.yiiu.core.bean.Result;
 import co.yiiu.core.exception.ApiException;
 import co.yiiu.core.util.identicon.Identicon;
 import co.yiiu.core.util.security.Base64Helper;
-import co.yiiu.module.score.model.ScoreLog;
 import co.yiiu.module.score.service.ScoreLogService;
 import co.yiiu.module.user.model.User;
 import co.yiiu.module.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
-
-import javax.imageio.ImageIO;
-import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by tomoya.
@@ -37,10 +44,13 @@ public class UserController extends BaseController {
 
     @Autowired
     private UserService userService;
+
     @Autowired
     private Identicon identicon;
+
     @Autowired
     private SiteConfig siteConfig;
+
     @Autowired
     private ScoreLogService scoreLogService;
 
@@ -120,10 +130,13 @@ public class UserController extends BaseController {
     @PostMapping("/profile")
     public String updateUserInfo(String email, String url, String bio, HttpServletResponse response) throws Exception {
         User user = getUser();
-        if (user.isBlock())
+        if (user.isBlock()) {
             throw new Exception("你的帐户已经被禁用，不能进行此项操作");
+        }
         user.setEmail(email);
-        if (bio != null && bio.trim().length() > 0) user.setBio(bio);
+        if (bio != null && bio.trim().length() > 0) {
+            user.setBio(bio);
+        }
         user.setUrl(url);
         userService.save(user);
         return redirect(response, "/user/" + user.getUsername());
@@ -151,13 +164,16 @@ public class UserController extends BaseController {
     @PostMapping("changeAvatar")
     @ResponseBody
     public Result changeAvatar(String avatar) throws ApiException, IOException {
-        if (StringUtils.isEmpty(avatar)) throw new ApiException("头像不能为空");
+        if (StringUtils.isEmpty(avatar)) {
+            throw new ApiException("头像不能为空");
+        }
         String _avatar = avatar.substring(avatar.indexOf(",") + 1, avatar.length());
         User user = getUser();
         byte[] bytes;
         try {
             bytes = Base64Helper.decode(_avatar);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
             throw new ApiException("头像格式不正确");
         }
@@ -186,13 +202,15 @@ public class UserController extends BaseController {
     @PostMapping("/changePassword")
     public String changePassword(String oldPassword, String newPassword, Model model) throws Exception {
         User user = getUser();
-        if (user.isBlock())
+        if (user.isBlock()) {
             throw new Exception("你的帐户已经被禁用，不能进行此项操作");
+        }
         if (new BCryptPasswordEncoder().matches(oldPassword, user.getPassword())) {
             user.setPassword(new BCryptPasswordEncoder().encode(newPassword));
             userService.save(user);
             model.addAttribute("changePasswordErrorMsg", "修改成功，请重新登录");
-        } else {
+        }
+        else {
             model.addAttribute("changePasswordErrorMsg", "旧密码不正确");
         }
         model.addAttribute("user", getUser());
@@ -265,7 +283,7 @@ public class UserController extends BaseController {
     /**
      * query user score history
      *
-     * @param p     page
+     * @param p page
      * @param model
      * @return
      */
@@ -277,6 +295,5 @@ public class UserController extends BaseController {
 
         return "front/user/setting/scoreLog";
     }
-
 
 }

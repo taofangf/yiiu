@@ -1,11 +1,12 @@
 package co.yiiu.module.user.model;
 
+import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
-import java.util.Date;
 
 /**
  * @author Beldon
@@ -18,9 +19,13 @@ public class RememberMeToken implements Serializable {
     @Id
     @GeneratedValue
     private int id;
+
     private String username;
+
     private String series;
+
     private String tokenValue;
+
     private Date date;
 
     public int getId() {

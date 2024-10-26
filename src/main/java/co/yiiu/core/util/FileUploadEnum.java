@@ -7,6 +7,7 @@ package co.yiiu.core.util;
  */
 public enum FileUploadEnum {
 
-  AVATAR, FILE
+    AVATAR,
+    FILE
 
 }

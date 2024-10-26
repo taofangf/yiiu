@@ -1,7 +1,7 @@
 <#macro welcome>
-<div class="panel panel-default">
-  <div class="panel-body">
-    ${site.intro!}
-  </div>
-</div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            ${site.intro!}
+        </div>
+    </div>
 </#macro>

@@ -9,59 +9,61 @@ import co.yiiu.core.ErrorCodeConstant;
  */
 public class Result<T> {
 
-  private int code;
-  private String description;
-  private T detail;
+    private int code;
 
-  public static Result success() {
-    return success(null);
-  }
+    private String description;
 
-  public static Result success(Object detail) {
-    Result result = new Result();
-    result.setCode(200);
-    result.setDescription("success");
-    result.setDetail(detail);
-    return result;
-  }
+    private T detail;
 
-  public static Result error() {
-    return error(null);
-  }
+    public static Result success() {
+        return success(null);
+    }
 
-  public static Result error(String description) {
-    return error(ErrorCodeConstant.error, description);
-  }
+    public static Result success(Object detail) {
+        Result result = new Result();
+        result.setCode(200);
+        result.setDescription("success");
+        result.setDetail(detail);
+        return result;
+    }
 
-  public static Result error(int code, String description) {
-    Result result = new Result();
-    result.setCode(code);
-    result.setDescription(description);
-    result.setDetail(null);
-    return result;
-  }
+    public static Result error() {
+        return error(null);
+    }
 
-  public int getCode() {
-    return code;
-  }
+    public static Result error(String description) {
+        return error(ErrorCodeConstant.error, description);
+    }
 
-  public void setCode(int code) {
-    this.code = code;
-  }
+    public static Result error(int code, String description) {
+        Result result = new Result();
+        result.setCode(code);
+        result.setDescription(description);
+        result.setDetail(null);
+        return result;
+    }
 
-  public String getDescription() {
-    return description;
-  }
+    public int getCode() {
+        return code;
+    }
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+    public void setCode(int code) {
+        this.code = code;
+    }
 
-  public T getDetail() {
-    return detail;
-  }
+    public String getDescription() {
+        return description;
+    }
 
-  public void setDetail(T detail) {
-    this.detail = detail;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public T getDetail() {
+        return detail;
+    }
+
+    public void setDetail(T detail) {
+        this.detail = detail;
+    }
 }

@@ -1,12 +1,19 @@
 package co.yiiu.module.score.model;
 
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import co.yiiu.core.util.Constants;
 import co.yiiu.module.user.model.User;
 import com.fasterxml.jackson.annotation.JsonFormat;
-
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Created by teddyzhu.
@@ -14,7 +21,7 @@ import java.util.Date;
  */
 @Table(name = "yiiu_score_log")
 @Entity
-public class ScoreLog  implements Serializable {
+public class ScoreLog implements Serializable {
 
     @Id
     @GeneratedValue

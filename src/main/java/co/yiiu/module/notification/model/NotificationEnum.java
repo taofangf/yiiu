@@ -6,7 +6,7 @@ package co.yiiu.module.notification.model;
  * https://yiiu.co
  */
 public enum NotificationEnum {
-  REPLY,
-  COLLECT,
-  AT
+    REPLY,
+    COLLECT,
+    AT
 }

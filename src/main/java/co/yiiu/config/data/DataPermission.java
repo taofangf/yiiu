@@ -9,40 +9,43 @@ import java.util.List;
  */
 public class DataPermission {
 
-  private String name;
-  private String description;
-  private String url;
-  private List<DataChildPermission> childs;
+    private String name;
 
-  public String getName() {
-    return name;
-  }
+    private String description;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    private String url;
 
-  public String getDescription() {
-    return description;
-  }
+    private List<DataChildPermission> childs;
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public String getUrl() {
-    return url;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setUrl(String url) {
-    this.url = url;
-  }
+    public String getDescription() {
+        return description;
+    }
 
-  public List<DataChildPermission> getChilds() {
-    return childs;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setChilds(List<DataChildPermission> childs) {
-    this.childs = childs;
-  }
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public List<DataChildPermission> getChilds() {
+        return childs;
+    }
+
+    public void setChilds(List<DataChildPermission> childs) {
+        this.childs = childs;
+    }
 }

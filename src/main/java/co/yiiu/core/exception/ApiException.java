@@ -9,34 +9,35 @@ import co.yiiu.core.ErrorCodeConstant;
  */
 public class ApiException extends Exception {
 
-  private int code;
-  private String message;
+    private int code;
 
-  public ApiException(String message) {
-    this.code = ErrorCodeConstant.error;
-    this.message = message;
-  }
+    private String message;
 
-  public ApiException(int code, String message) {
-    this.code = code;
-    this.message = message;
-  }
+    public ApiException(String message) {
+        this.code = ErrorCodeConstant.error;
+        this.message = message;
+    }
 
-  public int getCode() {
-    return code;
-  }
+    public ApiException(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
 
-  public void setCode(int code) {
-    this.code = code;
-  }
+    public int getCode() {
+        return code;
+    }
 
-  @Override
-  public String getMessage() {
-    return message;
-  }
+    public void setCode(int code) {
+        this.code = code;
+    }
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
 }

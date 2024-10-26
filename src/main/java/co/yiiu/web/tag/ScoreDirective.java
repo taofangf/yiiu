@@ -1,16 +1,20 @@
 package co.yiiu.web.tag;
 
+import java.io.IOException;
+import java.util.Map;
 import co.yiiu.config.SiteConfig;
 import co.yiiu.module.user.model.User;
 import co.yiiu.module.user.service.UserService;
 import freemarker.core.Environment;
-import freemarker.template.*;
+import freemarker.template.Configuration;
+import freemarker.template.DefaultObjectWrapperBuilder;
+import freemarker.template.TemplateDirectiveBody;
+import freemarker.template.TemplateDirectiveModel;
+import freemarker.template.TemplateException;
+import freemarker.template.TemplateModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
-import java.util.Map;
 
 /**
  * Created by tomoya.
@@ -20,23 +24,24 @@ import java.util.Map;
 @Component
 public class ScoreDirective implements TemplateDirectiveModel {
 
-  @Autowired
-  private UserService userService;
-  @Autowired
-  private SiteConfig siteConfig;
+    @Autowired
+    private UserService userService;
 
-  @Override
-  public void execute(Environment environment, Map map, TemplateModel[] templateModels,
-                      TemplateDirectiveBody templateDirectiveBody) throws TemplateException, IOException {
-    DefaultObjectWrapperBuilder builder = new DefaultObjectWrapperBuilder(Configuration.VERSION_2_3_25);
+    @Autowired
+    private SiteConfig siteConfig;
 
-    int p = map.get("p") == null ? 1 : Integer.parseInt(map.get("p").toString());
-    int limit = map.get("limit") == null ? siteConfig.getPageSize() : Integer.parseInt(map.get("limit").toString());
+    @Override
+    public void execute(Environment environment, Map map, TemplateModel[] templateModels,
+            TemplateDirectiveBody templateDirectiveBody) throws TemplateException, IOException {
+        DefaultObjectWrapperBuilder builder = new DefaultObjectWrapperBuilder(Configuration.VERSION_2_3_25);
 
-    Page<User> page = userService.findByScore(p, limit);
+        int p = map.get("p") == null ? 1 : Integer.parseInt(map.get("p").toString());
+        int limit = map.get("limit") == null ? siteConfig.getPageSize() : Integer.parseInt(map.get("limit").toString());
 
-    environment.setVariable("page", builder.build().wrap(page));
+        Page<User> page = userService.findByScore(p, limit);
 
-    templateDirectiveBody.render(environment.getOut());
-  }
+        environment.setVariable("page", builder.build().wrap(page));
+
+        templateDirectiveBody.render(environment.getOut());
+    }
 }

@@ -1,5 +1,8 @@
 package co.yiiu.core.util;
 
+import java.io.IOException;
+import java.io.StringWriter;
+import java.util.Map;
 import co.yiiu.core.util.freemarker.StringTemplateLoader;
 import com.google.common.collect.Maps;
 import freemarker.template.Configuration;
@@ -11,11 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
-import java.io.IOException;
-import java.io.StringWriter;
-import java.util.Map;
-import java.util.logging.Logger;
-
 /**
  * Created by teddyzhu.
  * Copyright (c) 2017, All Rights Reserved.
@@ -23,9 +21,7 @@ import java.util.logging.Logger;
 @Component
 public class FreemarkerUtil {
 
-
     private final Log logger = LogFactory.getLog(FreemarkerUtil.class);
-
 
     @Autowired
     FreeMarkerConfigurer freeMarkerConfigurer;
@@ -36,7 +32,8 @@ public class FreemarkerUtil {
         StringWriter writer = new StringWriter();
         try {
             getTemplateConfiguration(template).process(objectMap, writer);
-        } catch (TemplateException | IOException e) {
+        }
+        catch (TemplateException | IOException e) {
             e.printStackTrace();
             logger.error("render template error", e);
         }
@@ -51,19 +48,20 @@ public class FreemarkerUtil {
         Configuration configuration = null;
         try {
             configuration = freeMarkerConfigurer.createConfiguration();
-        } catch (IOException | TemplateException e) {
+        }
+        catch (IOException | TemplateException e) {
             e.printStackTrace();
             logger.error("get system configuration error", e);
         }
         configuration.setTemplateLoader(new StringTemplateLoader(template));
         configuration.setDefaultEncoding("UTF-8");
 
-
         try {
             Template stringTemplate = configuration.getTemplate("");
             cachedTemplate.put(template, stringTemplate);
             return stringTemplate;
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
             logger.error("get template error", e);
         }

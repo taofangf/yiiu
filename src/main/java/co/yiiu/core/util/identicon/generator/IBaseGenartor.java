@@ -1,6 +1,6 @@
 package co.yiiu.core.util.identicon.generator;
 
-import java.awt.*;
+import java.awt.Color;
 
 /**
  * Author: Bryant Hang
@@ -8,27 +8,25 @@ import java.awt.*;
  * Time: 下午2:43
  */
 public interface IBaseGenartor {
-  /**
-   * 将hash字符串转换为bool二维6*5数组
-   *
-   * @param hash
-   * @return
-   */
-  public boolean[][] getBooleanValueArray(String hash);
+    /**
+     * 将hash字符串转换为bool二维6*5数组
+     *
+     * @param hash
+     * @return
+     */
+    public boolean[][] getBooleanValueArray(String hash);
 
+    /**
+     * 获取图片背景色
+     *
+     * @return
+     */
+    public Color getBackgroundColor();
 
-  /**
-   * 获取图片背景色
-   *
-   * @return
-   */
-  public Color getBackgroundColor();
-
-
-  /**
-   * 获取图案前景色
-   *
-   * @return
-   */
-  public Color getForegroundColor();
+    /**
+     * 获取图案前景色
+     *
+     * @return
+     */
+    public Color getForegroundColor();
 }
