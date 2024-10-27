@@ -11,7 +11,7 @@
                         <li <#if tab?? && tab == 'newest'>class="active"</#if>><a href="/?tab=newest">最新</a></li>
                         <li <#if tab?? && tab == 'noanswer'>class="active"</#if>><a href="/?tab=noanswer">等待回复</a>
                         </li>
-                        <li><a href="javascript:;" data-toggle="modal" data-target="#choiceModal">节点</a></li>
+                        <li><a href="javascript:;" data-toggle="modal" data-target="#choiceModal">板块</a></li>
                         <div class="modal fade" id="choiceModal" tabindex="-1" role="dialog"
                              aria-labelledby="choiceModalLabel">
                             <div class="modal-dialog" role="document">
@@ -20,7 +20,7 @@
                                         <button id="closeChoiceModalBtn" type="button" class="close"
                                                 data-dismiss="modal" aria-label="Close"><span
                                                     aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">节点</h4>
+                                        <h4 class="modal-title" id="myModalLabel">板块</h4>
                                     </div>
                                     <div class="modal-body">
                                         <@nodes_tag>
