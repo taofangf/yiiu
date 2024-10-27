@@ -29,7 +29,8 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" id="code" name="code" placeholder="验证码"/>
                                 <span class="input-group-btn">
-                <img src="/code" id="changeCode"/>
+                <img src="/code" width="100" id="changeCode"
+                     style="margin-left: 10px;max-width: 100px;height: 34px;position: relative;top: -1px;"/>
               </span>
                             </div>
                         </div>
