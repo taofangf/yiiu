@@ -1,6 +1,6 @@
 <#macro score p=1 limit=10>
     <div class="panel panel-default">
-        <div class="panel-heading">积分榜 <a href="/top100">TOP 100 >></a></div>
+        <div class="panel-heading">贡献排行榜 <a href="/top100">TOP 100 >></a></div>
         <@score_tag p=p limit=limit>
             <table class="table">
                 <tbody>

@@ -4,7 +4,7 @@
         <div class="col-md-9">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <a href="/">主页</a> / Top100 积分榜
+                    <a href="/">主页</a> / Top100 贡献排行榜
                 </div>
 
                 <@score_tag p=1 limit=100>
