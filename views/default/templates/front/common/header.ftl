@@ -1,5 +1,6 @@
 <#macro header page_tab="">
     <nav class="navbar navbar-default" style="border-radius: 0; margin-bottom: 10px;">
+
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -9,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" style="font-weight: 700; font-size: 27px;" href="/">${site.name!}</a>
+                <a class="navbar-brand" style="font-weight: 700; font-size: 27px;" href="/"><img src="/static/icon.png"  style="  width: 32px; height: 32px; display: inline-block; position: relative; top: -2px; margin-right: 4px;"/>${site.name!}</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse header-navbar">
                 <#if site.search?? && site.search == true>
@@ -45,7 +46,7 @@
                         </li>
                     <#else>
                         <li <#if page_tab == "login">class="active"</#if>><a href="/login">登录</a></li>
-                        <#--<li <#if page_tab == "register">class="active"</#if>><a href="/register">注册</a></li>-->
+                    <#--<li <#if page_tab == "register">class="active"</#if>><a href="/register">注册</a></li>-->
                     </#if>
                 </ul>
             </div>

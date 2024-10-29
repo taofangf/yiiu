@@ -26,10 +26,10 @@
                                         <@nodes_tag>
                                             <#list nodes as pnode>
                                                 <div class="row" style="padding: 5px 0;">
-                                                    <div class="col-md-2">
-                                                        <div class="text-right">${pnode.name!}</div>
+                                                    <div class="col-md-3">
+                                                        <div class="text-center">${pnode.name!}</div>
                                                     </div>
-                                                    <div class="col-md-10 nodes">
+                                                    <div class="col-md-9 nodes">
                                                         <#list pnode.list as node>
                                                             <a data-id="${node.id!}"
                                                                href="/go/${node.value!}">${node.name!}</a>

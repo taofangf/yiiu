@@ -64,7 +64,7 @@ security:
       login-path: /github_login
 
 site:
-  name: 湖北移动
+  name: 信集中心
   intro: <h5>属于湖北移动信集中心的交流平台</h5><p>在这里，您可以提问，回答，分享，诉说，欢迎您的加入！</p>
   baseUrl: http://localhost:8080/ # 不要忘了后面的 '/'
   staticUrl: http://localhost:8080/static/images/upload/
